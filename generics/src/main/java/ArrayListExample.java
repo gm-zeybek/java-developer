@@ -13,6 +13,8 @@ public class ArrayListExample {
 //        items.add("apple");
         //test
 
+        //test2
+
         printDouble(items);
 
     }
