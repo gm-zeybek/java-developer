@@ -30,6 +30,10 @@ public class CalculateTest {
         Consumer<String> bc2 = System.out::println;
         bc2.accept("anything");
 
+        BiFunction<MyClass, Integer, Integer> method = MyClass::method;
+
+
+
 
     }
 }
