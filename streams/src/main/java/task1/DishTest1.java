@@ -2,7 +2,10 @@ package task1;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+
+import static java.util.Comparator.comparing;
 
 /**
  * Print the length of the name of each dish
@@ -20,14 +23,36 @@ public class DishTest1 {
                 new Dish("prawns", false, 300, Type.FISH),
                 new Dish("salmon", false, 450, Type.FISH));
         System.out.println("Print length of dish names");
+//        menu.stream()
+//                .map(d->d.getName().length())
+//                .forEach(System.out::println);
+
         menu.stream()
-                .map(d->d.getName().length())
+                .map(Dish::getName)
+                .map(String::length)
                 .forEach(System.out::println);
         System.out.println("Print dish names of dishes which have less than 400 calories");
         menu.stream()
-                .filter(d->d.getCalori()<400)
-                .map(d->d.getName())
+                .filter(d -> d.getCalori() < 400)
+                .map(Dish::getName)
                 .forEach(System.out::println);
+
+        System.out.println("Print three highest calori >300 of Dishes name");
+        menu.stream()
+                .filter(d->d.getCalori()>300)
+//                .sorted(Comparator.comparing(Dish::getCalori).reversed())
+                .limit(3)
+                .map(Dish::getName)
+                .forEach(System.out::println);
+
+        System.out.println("print all dishes names that have less than 400 calories in sorted");
+
+        menu.stream()
+                .filter(d -> d.getCalori() < 400)
+                .sorted(comparing(Dish::getCalori).reversed())
+                .map(Dish::getName)
+                .forEach(System.out::println);
+
 
     }
 }
