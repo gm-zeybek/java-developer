@@ -18,7 +18,7 @@ public class StudentTest {
 
         // if field is instant 3 ways to initialize (directly, instant block and with constrution)
                 // if field is static 2 ways to initialize (directly, and static block)
-                // @Data is inclusive (getter,setter, requiered argument const, toString, hascodeAndEquals)
+                // @Data is inclusive (getter,setter, required argument const, toString, hascodeAndEquals)
                 // @Builder uses it's class
         // @FunctionalInterfaces is for avoid to add another abstract method inside the functional interface, but ok for non-abstract method
         // Otherwise it breaks all lambda functions
@@ -27,9 +27,6 @@ public class StudentTest {
 
         System.out.println(students);
         for (Student s1:students) {
-
-
-
         }
 
     }

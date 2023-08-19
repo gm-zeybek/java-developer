@@ -56,47 +56,9 @@ public class ComparatorDemo {
                                 .thenComparing(Apple::getColor));
         System.out.println(myInventory);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("chaining inside the comparator method");
+        myInventory.sort(comparing(Apple::getWeight).thenComparing(Apple::getColor).reversed().thenComparing(Apple::getWeight));
+        System.out.println(myInventory);
 
 
     }

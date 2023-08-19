@@ -3,6 +3,7 @@ package doubleColonOperatore;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class CalculateTest {
     public static void main(String[] args) {
@@ -30,9 +31,12 @@ public class CalculateTest {
         Consumer<String> bc2 = System.out::println;
         bc2.accept("anything");
 
+        System.out.println("Using classname as a parameter");
         BiFunction<MyClass, Integer, Integer> method = MyClass::method;
-
-
+        method.apply(new MyClass(),3);
+        System.out.println("using new keyword instead of Classname as a pareameter");
+        Function<Integer,Integer> method2 = new MyClass()::method;
+        System.out.println(method2.apply(3));
 
 
     }

@@ -23,5 +23,7 @@ public class CarTest {
         System.out.println(twoConst.apply(2009, "BMW"));
         BiFunction<Integer,String,Car> twoConst2 = Car::new;
         System.out.println(twoConst2.apply(2000, "BMW"));
+
+        ;
     }
 }
