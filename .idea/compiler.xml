@@ -11,6 +11,7 @@
         <module name="oop-review" />
         <module name="generics" />
         <module name="collection-review" />
+        <module name="streams" />
       </profile>
     </annotationProcessing>
   </component>
