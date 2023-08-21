@@ -34,6 +34,12 @@ public class StateTest {
                 .flatMap(List::stream)
                 .forEach(System.out::println);
 
+        System.out.println("second method");
+        listOfStates.stream()
+
+                .flatMap(state -> state.getCities().stream())
+                .forEach(System.out::println);
+
 
     }
 }

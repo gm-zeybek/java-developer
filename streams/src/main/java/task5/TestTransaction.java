@@ -46,11 +46,11 @@ public class TestTransaction {
 
         //4. Return a string of all traders' names sorted alphabetically.
         System.out.println("4. Return a string of all traders' names sorted alphabetically.");
-        transactions.stream()
+        System.out.println(transactions.stream()
                 .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
-                .forEach(System.out::println);
+                .reduce("", String::concat));
 
         //5. Are any traders based in Milan?
         System.out.println("5. Are any traders based in Milan?");
